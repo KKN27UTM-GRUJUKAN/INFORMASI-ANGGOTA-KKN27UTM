@@ -1,0 +1,181 @@
+/* --- STYLES DIVISI --- */
+
+/* Container Utama */
+.division-section {
+    padding: 80px 20px; /* Padding Desktop */
+    background-color: #f9f9f9;
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh; /* Agar background mengisi layar penuh */
+}
+
+/* Judul Besar */
+.division-header {
+    text-align: center;
+    margin-bottom: 60px;
+    padding: 0 10px;
+}
+
+.division-header h1 {
+    font-family: 'Merriweather', serif;
+    font-size: 2.5rem;
+    color: #1A1A2E;
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+.division-header p {
+    color: #666;
+    font-size: 1rem;
+}
+
+/* Label Kategori (BPH / Divisi) */
+.category-title {
+    text-align: center;
+    margin: 60px 0 40px 0; /* Jarak antar divisi diperjelas */
+    position: relative;
+    padding: 0 15px;
+}
+
+.category-title h2 {
+    display: inline-block;
+    font-size: 1.8rem;
+    color: #F85F14; /* Warna Oranye Khas */
+    font-family: 'Merriweather', serif;
+    border-bottom: 3px solid #F85F14;
+    padding-bottom: 8px;
+    line-height: 1.3;
+}
+
+/* Grid System */
+.team-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- CARD STYLE --- */
+.team-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    
+    /* PERBAIKAN: Agar responsif, jangan pakai width fix */
+    width: 100%; 
+    max-width: 280px; /* Batas lebar di laptop */
+    
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: 0.3s;
+    text-align: center;
+    border: 1px solid #eee;
+    display: flex;
+    flex-direction: column; /* Menjaga susunan vertikal */
+}
+
+.team-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    border-color: #F85F14;
+}
+
+/* Gambar di dalam card */
+.team-img {
+    width: 100%;
+    height: 280px; /* Tinggi gambar diperbesar sedikit agar proporsional */
+    object-fit: cover;
+    object-position: top center; /* Fokus ke wajah bagian atas-tengah */
+}
+
+.team-content {
+    padding: 20px;
+    flex-grow: 1; /* Mendorong footer (sosmed) ke bawah jika teks pendek */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.team-content h3 {
+    font-size: 1.15rem; /* Ukuran nama pas */
+    color: #1A1A2E;
+    margin-bottom: 5px;
+    font-weight: 600;
+    line-height: 1.4; /* Jarak antar baris nama panjang */
+    min-height: 50px; /* Menjaga tinggi nama agar kartu sejajar */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.team-content .role {
+    color: #F85F14;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Social Icons */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #f0f0f0;
+    margin-top: auto; /* Memaksa icon ke bawah */
+}
+
+.social-links a {
+    color: #888;
+    font-size: 1.3rem; /* Icon sedikit diperbesar */
+    transition: 0.3s;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.social-links a:hover {
+    color: #F85F14;
+    transform: scale(1.1);
+}
+
+/* ========================================= */
+/* --- RESPONSIVE MOBILE (PERBAIKAN) --- */
+/* ========================================= */
+@media (max-width: 768px) {
+    .division-section {
+        padding: 50px 20px; /* Padding dikurangi di HP */
+    }
+
+    .division-header {
+        margin-bottom: 40px;
+    }
+
+    .division-header h1 {
+        font-size: 2rem; /* Judul lebih kecil di HP */
+    }
+
+    .category-title {
+        margin: 40px 0 20px 0;
+    }
+
+    .category-title h2 {
+        font-size: 1.5rem; /* Judul divisi lebih kecil */
+        border-bottom-width: 2px;
+    }
+
+    .team-grid {
+        gap: 25px; /* Jarak antar kartu lebih rapat */
+    }
+
+    .team-card {
+        /* Di HP, kartu agak diperlebar sedikit agar tulisan nama panjang muat */
+        max-width: 320px; 
+    }
+
+    .team-img {
+        height: 300px; /* Gambar lebih tinggi di HP biar jelas */
+    }
+}
